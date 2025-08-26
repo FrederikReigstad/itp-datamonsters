@@ -1,4 +1,6 @@
-﻿namespace Opgaver
+﻿using System.Net.Security;
+
+namespace Opgaver
 {
     public class Variabler
     {
@@ -7,15 +9,15 @@
             Console.WriteLine("------------------------------------------");
             Console.WriteLine("Velkommen til opgaver omkring Variabler!");
 
-            Int1();
-            Double1();
-            Strings1();
-            Bool1();
-            StringInterpolation();
-            StringInterpolation2();
-            Float1();
+            Int1(); 
+            Double1(); 
+            Strings1(); 
+            Bool1(); 
+            StringInterpolation(); 
+            StringInterpolation2(); 
+            Float1(); 
             Char1();
-            Decimal1();
+            Decimal1(); 
         }
 
         public static void Int1()
@@ -35,7 +37,8 @@
             Console.WriteLine("Lav en variabel af typen double og tildel den en værdi komma (decimal) værdi af 5 og en 1/4");
             Console.WriteLine("Udskriv variablen til konsollen.");
             // Lav opgaven herunder!
-
+            double decimel = 5.25;
+            Console.WriteLine(decimel);
         }
 
         public static void Strings1()
@@ -44,7 +47,10 @@
             Console.WriteLine("Lav en variabel af typen string og tildel den en værdi - den skal indeholde teksten 'Hello, World' med et udråbstegn til sidst!");
             Console.WriteLine("Udskriv variablen til konsollen.");
             // Lav opgaven herunder!
-        }
+            string text = "Helo, World!";
+            Console.WriteLine(text);
+
+        } 
 
         public static void Bool1()
         {
@@ -52,6 +58,8 @@
             Console.WriteLine("Lav en variabel af typen bool og tildel den en sandhedsværdi (true/false).");
             Console.WriteLine("Udskriv variablen til konsollen.");
             // Lav opgaven herunder!
+            bool niceWeather = true;
+            Console.WriteLine(niceWeather);
 
         }
 
@@ -62,6 +70,10 @@
             Console.WriteLine("Lav to string variabeler og udskriv dem ved brug af string interpolation.");
             Console.WriteLine("De skal være 'Hello, ' og 'World!'");
             // Lav opgaven herunder!
+            string text1 = "Hello, ";
+            string text2 = "World!";
+            Console.WriteLine(text1+text2);
+            Console.WriteLine($"{text1}{text2}");
         }
 
         public static void StringInterpolation2()
@@ -80,7 +92,8 @@
             Console.WriteLine("Kombiner dem nu til én sætning:");
 
             // Løsning med string interpolation
-            
+            Console.WriteLine($"{del1} {del4} {del3}{del2}");
+
         }
 
         public static void Float1()
@@ -89,6 +102,8 @@
             Console.WriteLine("Lav en variabel af typen float og tildel den en værdi af 3 + 0.14");
             Console.WriteLine("Udskriv variablen til konsollen.");
             // Lav opgaven herunder!
+            float x = 3f + 0.14f;
+            Console.WriteLine(x);
         }
 
         public static void Char1()
@@ -97,6 +112,8 @@
             Console.WriteLine("Lav en variabel af typen char og tildel den en værdi af det første bogstav i alfabetet (Det skal være stort!)");
             Console.WriteLine("Udskriv variablen til konsollen.");
             // Lav opgaven herunder!
+            char bogstav = 'A';
+            Console.WriteLine(bogstav);
         }
 
         public static void Decimal1()
@@ -105,6 +122,9 @@
             Console.WriteLine("Lav en variabel af typen decimal og tildel den en værdi af 100 og en halv");
             Console.WriteLine("Udskriv variablen til konsollen.");
             // Lav opgaven herunder!
+            decimal n1 = 100.5m;
+            Console.WriteLine(n1);
+       
         }
     }
 }
