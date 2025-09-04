@@ -27,24 +27,109 @@ namespace Opgaver
                 "Lav et program som tjekker om en given værdi er højere eller lavere end 18"
             );
             // Lav opgaven herunder!
+            if (int.TryParse(Console.ReadLine(), out int number));
+            if (number < 18)
+            {
+                Console.WriteLine("The number is bigger then 18");
+            }
+            else if (number > 18) 
+            {
+                Console.WriteLine("The number is smaller then 18");
+            }
+            else
+            {
+                Console.WriteLine("The number is 18");
+            }
         }
 
         public static void If2()
         {
             Console.WriteLine("Lav et program som tjekker om en given værdi er lige eller ulige");
             // Lav opgaven herunder!
+            int tal;
+            while (true)
+            {
+                Console.Write("Indtast et heltal: ");
+                if (int.TryParse(Console.ReadLine(), out tal))
+                {
+                    break; // Gyldigt input
+                }
+                else
+                {
+                    Console.WriteLine("Ugyldigt input! Indtast venligst et heltal.");
+                }
+            }
+
+            // Tjek lige eller ulige
+            if (tal % 2 == 0)
+            {
+                Console.WriteLine($"{tal} er lige.");
+            }
+            else
+            {
+                Console.WriteLine($"{tal} er ulige.");
+            }
         }
 
         public static void Switch1()
         {
-            Console.WriteLine("Lav et program som tjekker om en given værdi er lige eller ulige");
-            // Lav opgaven herunder!
+            // Variabel til tal
+            int tal;
+
+            // Sikre gyldigt input
+            while (true)
+            {
+                Console.Write("Indtast et heltal: ");
+                if (int.TryParse(Console.ReadLine(), out tal))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Ugyldigt input! Indtast venligst et heltal.");
+                }
+            }
+
+            // Brug switch på tal % 2
+            switch (tal % 2)
+            {
+                case 0:
+                    Console.WriteLine($"{tal} er lige.");
+                    break;
+                case 1:
+                    Console.WriteLine($"{tal} er ulige.");
+                    break;
+            }
+
         }
 
         public static void Ternary1()
         {
             Console.WriteLine("Lav et program som tjekker om en given værdi er lige eller ulige");
             // Lav opgaven herunder!
+            Console.WriteLine("Program som tjekker om et tal er lige eller ulige.");
+
+            // Variabel til tal
+            int tal;
+
+            // Sikre gyldigt input
+            while (true)
+            {
+                Console.Write("Indtast et heltal: ");
+                if (int.TryParse(Console.ReadLine(), out tal))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Ugyldigt input! Indtast venligst et heltal.");
+                }
+            }
+
+            // Ternary-operator til at tjekke lige/ulige
+            string resultat = (tal % 2 == 0) ? "lige" : "ulige";
+
+            Console.WriteLine($"{tal} er {resultat}.");
         }
 
         public static void MiniProjektQuiz()
@@ -62,6 +147,57 @@ namespace Opgaver
                 "Tip: Brug variabler til at gemme point og svar, og if/else til at tjekke svarene."
             );
             // Lav opgaven herunder!
+            int points = 0; // holder styr på rigtige svar
+            string svar;
+            // Spørgsmål 1
+            Console.WriteLine("Spørgsmål 1: Hvad er religion i Danmark?");
+            svar = Console.ReadLine().ToLower(); // .ToLower så store/små bogstaver ikke betyder noget
+            if (svar == "kristendommen" || svar == "christianity")
+            {
+                Console.WriteLine("Rigtigt!");
+                points++;
+            }
+            else
+            {
+                Console.WriteLine("Forkert! Det rigtige svar er Kristendommen.");
+            }
+
+            Console.WriteLine();
+
+            // Spørgsmål 2
+            Console.WriteLine("Spørgsmål 2: Hvor mange dage er der i en uge?");
+            svar = Console.ReadLine();
+            if (svar == "7")
+            {
+                Console.WriteLine("Rigtigt!");
+                points++;
+            }
+            else
+            {
+                Console.WriteLine("Forkert! Det rigtige svar er 7.");
+            }
+
+            Console.WriteLine();
+
+            // Spørgsmål 3
+            Console.WriteLine("Spørgsmål 3: Hvilket dyr kaldes 'kongens af junglen'?");
+            svar = Console.ReadLine().ToLower();
+            if (svar == "løve" || svar == "lion")
+            {
+                Console.WriteLine("Rigtigt!");
+                points++;
+            }
+            else
+            {
+                Console.WriteLine("Forkert! Det rigtige svar er løven.");
+            }
+
+            Console.WriteLine();
+
+            // Resultat
+            Console.WriteLine($"Du fik {points} ud af 3 rigtige!");
+        
+
         }
 
         public static void MiniProjektKarakterFeedback()
