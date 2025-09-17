@@ -28,6 +28,7 @@ namespace Opgaver
             );
             // Lav opgaven herunder!
             if (int.TryParse(Console.ReadLine(), out int number));
+
             if (number < 18)
             {
                 Console.WriteLine("The number is bigger then 18");
@@ -218,6 +219,81 @@ namespace Opgaver
             for en bruger og man regner gennemsnittet ud."
             );
             // Lav opgaven herunder!
+            Console.Write("Indtast en karakter: ");
+            int karakter;
+            while (!int.TryParse(Console.ReadLine(), out karakter))
+            {
+                Console.WriteLine("Ugyldigt input! Indtast venligst et heltal.");
+                Console.Write("Indtast en karakter: ");
+            }
+
+            // Brug switch til feedback
+            switch (karakter)
+            {
+                case 12:
+                    Console.WriteLine("Super flot! 🌟");
+                    break;
+                case 10:
+                    Console.WriteLine("Rigtig godt klaret! 👍");
+                    break;
+                case 7:
+                    Console.WriteLine("Godt arbejde – der er stadig plads til forbedring.");
+                    break;
+                case 4:
+                    Console.WriteLine("Du bestod, men der er plads til at gøre det bedre.");
+                    break;
+                case 02:
+                    Console.WriteLine("Lige akkurat bestået – hæng i!");
+                    break;
+                case 00:
+                    Console.WriteLine("Desværre ikke bestået. Prøv igen og lær af det.");
+                    break;
+                case -3:
+                    Console.WriteLine("Ikke bestået. Husk, man lærer af sine fejl.");
+                    break;
+                default:
+                    Console.WriteLine("Ukendt karakter. Brug fx 12, 10, 7, 4, 02, 00 eller -3.");
+                    break;
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Ekstra opgave: Beregn gennemsnit af flere karakterer!");
+
+            // Ekstra opgave: flere karakterer og gennemsnit
+            Console.WriteLine("Indtast flere karakterer (skriv 'stop' for at afslutte):");
+
+            List<int> karakterer = new List<int>();
+            string input;
+
+            while (true)
+            {
+                Console.Write("Indtast karakter: ");
+                input = Console.ReadLine().ToLower();
+
+                if (input == "stop")
+                {
+                    break; // afslut løkken
+                }
+
+                if (int.TryParse(input, out int k))
+                {
+                    karakterer.Add(k);
+                }
+                else
+                {
+                    Console.WriteLine("Ugyldigt input! Indtast et heltal eller 'stop'.");
+                }
+            }
+
+            if (karakterer.Count > 0)
+            {
+                double gennemsnit = karakterer.Average();
+                Console.WriteLine($"Du har indtastet {karakterer.Count} karakterer. Gennemsnittet er {gennemsnit:F2}");
+            }
+            else
+            {
+                Console.WriteLine("Ingen karakterer blev indtastet.");
+            }
         }
     }
 }
